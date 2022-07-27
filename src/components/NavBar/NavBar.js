@@ -1,5 +1,6 @@
 // UpperCamelCase
 import './NavBar.scss'
+import CartWidget from '../CartWidget/CartWidget'
 const NavBar = () => {
     return(
         // Fragment
@@ -12,6 +13,7 @@ const NavBar = () => {
                 <li><button>Contacto</button></li>
                 <li><button>La Empresa</button></li>
             </ul>
+            <CartWidget />
         </div>
     ) 
 }
