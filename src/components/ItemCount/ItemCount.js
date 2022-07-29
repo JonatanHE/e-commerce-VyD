@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState, useEffect } from 'react'
 
 const ItemCount = ({stock}) => {
     const [contador, setContador] = useState(0)
@@ -9,6 +9,10 @@ const ItemCount = ({stock}) => {
     const removeNumber = () =>{
         setContador(contador - 1)
     }
+    useEffect( () => {
+        console.log("Actualizacion")
+        // setContador(1)
+    }, [contador])
     return (
         <div className='countProd'>
             <button onClick={removeNumber}>-</button>
