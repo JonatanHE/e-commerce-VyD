@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const ItemCount = ({stock}) => {
-    const [contador, setContador] = useState(0)
+    const [contador, setContador] = useState(1)
 
     const addNumber = () =>{
         setContador(contador + 1)
@@ -15,9 +15,9 @@ const ItemCount = ({stock}) => {
     }, [contador])
     return (
         <div className='countProd'>
-            <button onClick={removeNumber}>-</button>
+            <button disabled={contador <= 1} onClick={removeNumber}>-</button>
             <p>{contador}</p>
-            <button onClick={addNumber}>+</button>
+            <button disabled={contador >= stock} onClick={addNumber}>+</button>
         </div>
     )
 }
