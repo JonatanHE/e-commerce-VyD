@@ -1,0 +1,27 @@
+.containerDetail{
+    width: 200%;
+    margin: auto;
+}
+.detail_image{
+box-sizing: content-box;
+padding-left: 100px;
+padding-top: 50px;
+width: 300px;
+}
+.content{
+    font-size: 15px;
+    padding-left: 160px;
+}
+.countProd {
+    display: flex;
+}
+.content button{
+        width: 60px;
+        height: 20px;
+        border-radius: 10px;
+}
+.content span{
+    font-size: 30px;
+    margin: 15px;
+    padding: 0 0 10px 0;
+}

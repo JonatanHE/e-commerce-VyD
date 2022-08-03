@@ -1,7 +1,6 @@
 import './App.scss';
-import Modal from './components/Modal/Modal';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 function App() {
   const styleApp = {padding: '0px'}
 
@@ -9,12 +8,10 @@ function App() {
     //JSX
     <div className="container" style={styleApp}>
       <NavBar/>
-      <Modal />
-      <div className='list-products'>
+      <ItemDetailContainer/>
+{/*       <div className='list-products'>
           <ItemListContainer section="En Oferta"/>
-          <ItemListContainer section="Temporada"/>
-          <ItemListContainer section="50% OFF"/>
-      </div>
+      </div> */}
     </div>
   );
 }
