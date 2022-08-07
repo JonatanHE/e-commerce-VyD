@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
-const film = {image:"/assets/remera1.jpg", title:"Remera 1" , price: 4000}
+const film = {image:"/assets/remera1.jpg", title:"Remera Azul" , price: 4000}
 
 export const ItemDetailContainer = () => {
     const [data, setData]= useState({});
