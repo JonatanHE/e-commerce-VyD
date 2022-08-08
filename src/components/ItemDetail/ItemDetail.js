@@ -17,10 +17,6 @@ export const ItemDetail = ({data}) => {
                     <button>L</button>
                     <button>XL</button>
                 </div>
-{/*             {console.log("quantitySelected: ", quantitySelected)}
-{
-    quantitySelected > 0 ? <button><Link to="/cart">TERMINAR COMPRA</Link></button> : <ItemCount setQuantitySelected={setQuantitySelected} productData={data}/>
-} */}
             </div>
         </div>
     </>

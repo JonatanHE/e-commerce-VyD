@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import ItemList from "../ItemList/ItemList"
 import './ItemListContainer.scss'
 import products from '../../utils/products.mock'
-import ItemCount from "../ItemCount/ItemCount"
+//import ItemCount from "../ItemCount/ItemCount"
 
 const ItemListContainer = ({section}) => {
 
@@ -14,9 +14,9 @@ const ItemListContainer = ({section}) => {
         }, 2000)
     })
 
-    const onAdd=(quantity)=>{
+    /* const onAdd=(quantity)=>{
         console.log(`Compraste ${quantity} unidades`)
-    }
+    } */
 
     useEffect(() => {
         getProducts
@@ -34,7 +34,6 @@ const ItemListContainer = ({section}) => {
         <div className='list-products'>
             <h2>{section}</h2>
             <ItemList dataProducts={listProducts}/>
-            <ItemCount initial={1} stock={5} onAdd={onAdd}/>
         </div>
     )
 }

@@ -25,7 +25,7 @@ const products = [
         title: "Remera 4",
         price: 7000,
         image: 'remera4.jpg',
-        stock: 8,
+        stock: 13,
     },
     {
         id:5,
@@ -39,21 +39,21 @@ const products = [
         title: "Remera 6",
         price: 9000,
         image: 'remera2.jpg',
-        stock: 10,
+        stock: 15,
     },
     {
         id:7,
         title: "Remera 7",
         price: 10000,
         image: 'remera3.jpg',
-        stock: 11,
+        stock: 3,
     },
     {
         id:8,
         title: "Remera 8",
         price: 11000,
         image: 'remera4.jpg',
-        stock: 12,
+        stock: 2,
     },
 ]
 

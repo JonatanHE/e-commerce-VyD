@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const ItemCount = ({initial, stock}) => {
-    const [contador, setContador] = useState(1)
+    const [contador, setContador] = useState(initial)
 
     const addNumber = () =>{
         setContador(contador + 1)
