@@ -1,22 +1,25 @@
 import React from "react";
 import './ItemDetail.scss';
-export const ItemDetail = ({data}) => {
+import ItemCount from "../ItemCount/ItemCount";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+
+const ItemDetail = ({data}) => {
+    const [contador, setContadorSelet] = useState(0)
     return(
         <>
         <div className="item-detail-image">
-            <img className='detail_image' src={data.image} alt="" />
+            <img className='detail_image' src={`/assets/${data.image}`} alt="no disponible" />
             <div className="detail_info">
-                <span className="category">Hombre / Remeras</span>
+                <span className="category">{data.category} /</span>
                 <h2>{data.title}</h2>
+                <h3>Cod. {data.code}</h3>
                 <p className="detail_price">$ {data.price}</p>
-                <span className="detailTituloTalles">Talles</span>
-                <div className="detailTalleButton">
-                    <button>XS</button>
-                    <button>S</button>
-                    <button>M</button>
-                    <button>L</button>
-                    <button>XL</button>
-                </div>
+                {console.log("Cantidad contador: ", contador)}
+                {
+                    contador > 0 ? <Link to="/cart"> <button>TERMINAR COMPRA</button></Link> : <ItemCount setContadorSelet={setContadorSelet} className="buttonDetailCount"/>
+                }
             </div>
         </div>
     </>

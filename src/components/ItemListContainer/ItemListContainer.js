@@ -13,11 +13,6 @@ const ItemListContainer = ({section}) => {
             resolve(products)
         }, 2000)
     })
-
-    /* const onAdd=(quantity)=>{
-        console.log(`Compraste ${quantity} unidades`)
-    } */
-
     useEffect(() => {
         getProducts
             .then( (res) => {

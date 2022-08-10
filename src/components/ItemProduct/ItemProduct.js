@@ -1,18 +1,20 @@
-import ItemCount from '../ItemCount/ItemCount'
 import './ItemProduct.scss'
+import  {Link} from 'react-router-dom'
 
 const ItemProduct = ({data, action, onAdd}) => {
-
-    const {title, image, price, stock} = data
+    //console.log("Muestra data: ", {data})
+    const {title, image, price, stock, id} = data
     return (
-        <div className="item-product">
-            <img src={` /assets/${image}`} alt="Imagen producto"/>
-            <p>{title}</p>
-            <span>$ {price}</span>
-            <ItemCount initial={1} stock={stock} onAdd={onAdd}/>
-            <p>En stock {stock}u.</p>
-            <button>Comprar</button>
-        </div>
+        <Link to={`/productos/${id}`}>
+            <div className="item-product">
+                <img src={` /assets/${image}`} alt="Imagen producto"/>
+                <p>{title}</p>
+                <span>$ {price}</span>
+                {/* <ItemCount initial={1} stock={stock} onAdd={onAdd}/> */}
+                <p>En stock {stock}u.</p>
+                <button>Comprar</button>
+            </div>
+        </Link>
     )
 }
 export default ItemProduct

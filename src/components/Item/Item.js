@@ -1,6 +1,6 @@
 
-const Item = ({ datos }) => {
-  const {image, title, price, stock,} = datos;
+const Item = ({ data }) => {
+  const {image, title, price, stock,} = data;
   return (
    
   )

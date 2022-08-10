@@ -30,17 +30,15 @@ p.detail_price {
 .detail_info h2{
     font-size: 30px;
 }
-span.detailTituloTalles {
-    font-size: 20px;
-}
-.detailTalleButton {
-    padding: 15px;
-}
 .detail_info button{
-    background-color: black;
-    color: white;
+    //background-color: black;
+    //color: white;
+    font-size: 25px;
     border-color: white;
     border-radius: 8px;
-    width: 40px;
-    height: 25px;
+    width: auto;
+    height: auto;
+}
+.button {
+    width: 10px;
 }

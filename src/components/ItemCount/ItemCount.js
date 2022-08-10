@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import {useState} from 'react'
 
-const ItemCount = ({initial, stock}) => {
-    const [contador, setContador] = useState(initial)
+const ItemCount = ({setContadorSelet,stock}) => {
+    const [contador, setContador] = useState(1)
 
     const addNumber = () =>{
         setContador(contador + 1)
@@ -9,16 +9,18 @@ const ItemCount = ({initial, stock}) => {
     const removeNumber = () =>{
         setContador(contador - 1)
     }
-    useEffect( () => {
-        console.log("Actualizacion")
-        // setContador(1)
-    }, [contador])
+    const onAdd = () =>{
+        setContadorSelet(contador)
+    }
     return (
-        <div className='countProd'>
-            <button disabled={contador <= 1} onClick={removeNumber}>-</button>
-            <p>{contador}</p>
-            <button disabled={contador >= stock} onClick={addNumber}>+</button>
-        </div>
+        <>
+            <div className='countProd'>
+                <button disabled={contador <= 1} onClick={removeNumber}>-</button>
+                <span>{contador}</span>
+                <button disabled={contador >= stock} onClick={addNumber}>+</button>
+            </div>
+            <button onClick={onAdd}>AGREGAR A CARRITO</button>
+        </>
     )
 }
 

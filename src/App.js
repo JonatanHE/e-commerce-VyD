@@ -1,8 +1,11 @@
 import './App.scss';
 import NavBar from './components/NavBar/NavBar';
-//import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Home from './pages/Home';
+import Contact from './pages/Contact';
+import Products from './pages/Products';
+import Detail from './pages/Detail';
+import Checkout from './pages/Checkout';
 
 function App() {
 
@@ -11,15 +14,11 @@ function App() {
     <BrowserRouter>
       <NavBar/>
       <Routes>
-        <Route path='/' element={
-          <div className="container">
-            <section className='list-products'>
-              <ItemListContainer section="En Oferta"/>
-            </section>
-          </div>
-        } />
-        <Route path='/contacto' element={<h1>Contacto</h1>}/>
-        <Route path='/contacto' element={<h1>Productos</h1>}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/contacto' element={<Contact/>}/>
+        <Route path='/productos' element={<Products />}/>
+        <Route path='/:category/:id' element={<Detail />}/>
+        <Route path='/cart' element={<Checkout />}/>
       </Routes>
     </BrowserRouter>
   );

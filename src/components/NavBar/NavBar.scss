@@ -1,11 +1,12 @@
 .container {
     color: black;
-    font-size: 10px;
+    font-size: 120%;
 }
 .nav-style{
     color: #379c5d;
     font-size: 15px;
     background-color: rgba(105, 179, 192, 0.5);
+    text-align: center;
 }
 .nav-style ul li button{
     border-radius: 10px;
@@ -30,4 +31,13 @@ h1{
     font-size: 35px;
     padding-right: 5px;
     color: black;
+}
+.nav-style ul{
+    margin: auto;
+    padding-top: 20px;
+}
+.logo {
+    width: 88px;
+    display: flex;
+    float: left;
 }
