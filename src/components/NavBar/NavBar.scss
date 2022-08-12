@@ -41,3 +41,91 @@ h1{
     display: flex;
     float: left;
 }
+
+//Estilo CardWidget
+.navbar-primary {
+    float: left;
+    width: 100%;
+    box-shadow: 1px 3px 5px #e7e7e7;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1;
+    .cart-widget {
+        display: flex;
+        align-items: center;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        li {
+            margin: 0px 10px;
+            button {
+                background: none;
+                border: none;
+                font-size: 18px;
+                cursor: pointer;
+                text-transform: uppercase;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }        
+    } 
+}
+
+.item-cart-product {
+    /* float: left; */
+    display: flex;
+    max-width: 500px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.item-cart-product img {
+    width: 25%;
+}
+
+.item-cart-product img + .cart-product__details {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-cart-product .cart-product__details:nth-last-child(2) {
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.cart-product__action {
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.cart-product__details {
+    /* display: flex; */
+}
+
+button.btn-delete-all {
+    margin-right: 10px;
+    float: right;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background: black;
+    cursor: pointer;
+    border: 1px solid black;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+}
+
+button.btn-delete-all:hover {
+    background: white;
+    color: black
+}

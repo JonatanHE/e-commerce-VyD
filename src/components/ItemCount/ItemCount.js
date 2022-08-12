@@ -1,6 +1,10 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
+import { CartContext } from '../../context/CartContext'
 
-const ItemCount = ({setContadorSelet,stock}) => {
+
+const ItemCount = ({setContadorSelet, stock, productData}) => {
+    const { addProductToCart } = useContext(CartContext)
+
     const [contador, setContador] = useState(1)
 
     const addNumber = () =>{
@@ -10,6 +14,8 @@ const ItemCount = ({setContadorSelet,stock}) => {
         setContador(contador - 1)
     }
     const onAdd = () =>{
+        console.log("Agregar al Carrito: ", productData)
+        addProductToCart([productData])
         setContadorSelet(contador)
     }
     return (

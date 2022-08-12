@@ -8,7 +8,7 @@ const ItemProduct = ({data, action, onAdd}) => {
         <Link to={`/productos/${id}`}>
             <div className="item-product">
                 <img src={` /assets/${image}`} alt="Imagen producto"/>
-                <p>{title}</p>
+                <p className='itemProductsTitle'>{title}</p>
                 <span>$ {price}</span>
                 {/* <ItemCount initial={1} stock={stock} onAdd={onAdd}/> */}
                 <p>En stock {stock}u.</p>

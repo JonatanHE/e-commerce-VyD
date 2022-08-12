@@ -18,7 +18,7 @@ const ItemDetail = ({data}) => {
                 <p className="detail_price">$ {data.price}</p>
                 {console.log("Cantidad contador: ", contador)}
                 {
-                    contador > 0 ? <Link to="/cart"> <button>TERMINAR COMPRA</button></Link> : <ItemCount setContadorSelet={setContadorSelet} className="buttonDetailCount"/>
+                    contador > 0 ? <Link to="/cart"> <button>TERMINAR COMPRA</button></Link> : <ItemCount setContadorSelet={setContadorSelet} productData={data} className="buttonDetailCount"/>
                 }
             </div>
         </div>
