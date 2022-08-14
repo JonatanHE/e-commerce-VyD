@@ -11,7 +11,7 @@ const ItemListContainer = ({section}) => {
     const getProducts = new Promise( (resolve, reject) => {
         setTimeout( () => {
             resolve(products)
-        }, 2000)
+        }, 10)
     })
     useEffect(() => {
         getProducts

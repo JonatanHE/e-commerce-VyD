@@ -10,10 +10,22 @@ const CartProvider = ({children}) => {
         setCartProducts([...cartProducts, product])
     }
 
+    const deleteProduct = (product) => {
+        console.log("Producto a eliminar:", product)
+        setCartProducts(cartProducts.filter( (cartProduct) => cartProduct.id !== product.id) )
+    }
+
+    const clear = () => {
+        setCartProducts([])
+    }
+
+
     const data = {
         cartProducts,
         setCartProducts,
-        addProductToCart
+        addProductToCart,
+        clear,
+        deleteProduct  
     }
 
     return(

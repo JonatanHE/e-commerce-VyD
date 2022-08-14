@@ -10,6 +10,8 @@ const CartWidget = () => {
     const [anchorEl, setAnchorEl] = useState(null);
 
     const { cartProducts, clear, deleteProduct, totalProducts } = useContext(CartContext)
+        let x = cartProducts[0];
+
 
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -36,7 +38,7 @@ const CartWidget = () => {
                 'aria-labelledby': 'basic-button',
                 }}
             >   {console.log("cartProducts desde widget: ", cartProducts)}
-                {cartProducts.map((product) => {
+                {x.map((product) => {
                     return(
                            <div className='item-cart-product' key={product.id}>
                             <img src={`/assets/${product.image}`} alt="" />
