@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import ItemList from "../ItemList/ItemList"
 import './ItemListContainer.scss'
 import products from '../../utils/products.mock'
-//import ItemCount from "../ItemCount/ItemCount"
 
 const ItemListContainer = ({section}) => {
 
@@ -11,8 +10,9 @@ const ItemListContainer = ({section}) => {
     const getProducts = new Promise( (resolve, reject) => {
         setTimeout( () => {
             resolve(products)
-        }, 10)
+        }, 50)//Se cambia temporalmente el tiempo para trabajarlo rapidamente
     })
+
     useEffect(() => {
         getProducts
             .then( (res) => {
@@ -23,8 +23,8 @@ const ItemListContainer = ({section}) => {
             })
             .finally( () => {
             })
-    })
-   
+    }, [])
+
     return(
         <div className='list-products'>
             <h2>{section}</h2>

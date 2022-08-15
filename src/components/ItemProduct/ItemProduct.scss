@@ -1,24 +1,113 @@
-.item-product{
+.item-product {
     float: left;
     width: 20%;
+    box-shadow: 1px 1px 5px #afafafd3;
     border: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    margin-right: 10px;
-    text-decoration: none;
-    color: black;
+    position: relative;
+    margin: 5px;
+    border-radius: 10px;
+
+    .float-options {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        p {
+            font-size: 12px;
+            padding: 5px;
+            margin: 0;
+            line-height: 16px;
+            width: 50px;
+            text-align: center;
+            background: #00a650;
+            color: white;
+        }
+        
+        button {
+            background: none;
+            border: none;
+            margin-right: 5px;
+        }
+    }
+    
+    img {
+        width: 80%;
+        margin-top: 15px;
+    }
+    .countProd {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .countProd p {
+        font-size: 22px;
+    }
+    
+    .countProd button {
+        padding: 10px;
+        font-size: 27px;
+        margin: 10px;
+    }
 }
-.countProd{
-    display: flex;
-    justify-content: center;
+.detail-product > p:nth-of-type(1) {
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    padding: 20px 0px;
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 1.5px;
 }
 
-.countProd button{
+.detail-product > p:nth-of-type(2), .detail-product > p:nth-of-type(3) {
+    font-size: 12px;
+    display: flex;
     align-items: center;
-    width: 35%;
-    height: 10%;
-    margin: 3px;
-    background-color: lightblue;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.detail-product > p svg {
+    margin-right: 6px;
+}
+.item-product:nth-of-type(5n) {
+    margin-right: 0px !important;
+}
+
+.detail-product button {
+    float: left;
+    width: 100%;
+    background: black;
+    border: 1px solid black;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+.detail-product button:hover {
+    background-color: rgb(21, 207, 21);
+    color:black;
+}
+.detail-product {
+    padding: 0px 10px;
+}
+.styleTitle h2{
+    font-size: 50%;
+    font-family: arial;
+}
+.styleTitle{
+    height: 30px;
+}
+span.stylePrice {
+    font-size: 15px;
 }

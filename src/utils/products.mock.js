@@ -1,7 +1,7 @@
 const products = [
     {
         id:1,
-        title: "9/11/19/CLIO/EXPRESS",
+        title: "9-11-19-CLIO-EXPRESS",
         category:"RENAULT",
         code: "01-010",
         price: 1394.13,
@@ -19,7 +19,7 @@ const products = [
     },
     {
         id:3,
-        title: "MEGAN/CLIO2/SCENIC",
+        title: "MEGAN-CLIO2-SCENIC",
         category:"RENAULT",
         code: "01-012",
         price: 1841.35,

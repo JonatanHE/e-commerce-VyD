@@ -1,13 +1,18 @@
 import { createContext, useState } from "react";
 
-export const CartContext = createContext ()
+const CartContext = createContext()
 
 const CartProvider = ({children}) => {
     const [cartProducts, setCartProducts] = useState([])
-    console.log("cartProducts: ", cartProducts)
+    const [totalProducts, setTotalProducts] = useState(0)
 
     const addProductToCart = (product) => {
-        setCartProducts([...cartProducts, product])
+        let isInCart = cartProducts.find(cartItem => cartItem.id === product.id)
+        if(!isInCart) {
+            console.log("se agrego el producto:", product)
+            setTotalProducts(totalProducts + 1)
+            return setCartProducts(cartProducts => [...cartProducts, product])
+        }
     }
 
     const deleteProduct = (product) => {
@@ -19,21 +24,22 @@ const CartProvider = ({children}) => {
         setCartProducts([])
     }
 
-
     const data = {
         cartProducts,
         setCartProducts,
-        addProductToCart,
+        deleteProduct,
         clear,
-        deleteProduct  
+        addProductToCart,
+        totalProducts
     }
 
     return(
         <CartContext.Provider value={data}>
             {children}
         </CartContext.Provider>
-
     )
 }
 
 export default CartProvider
+
+export { CartContext }

@@ -5,13 +5,10 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { CartContext } from '../../context/CartContext';
 
 
-
 const CartWidget = () => {
     const [anchorEl, setAnchorEl] = useState(null);
 
     const { cartProducts, clear, deleteProduct, totalProducts } = useContext(CartContext)
-        let x = cartProducts[0];
-
 
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -22,7 +19,7 @@ const CartWidget = () => {
     };
     return(
         <div className='cart-widget' >
-            {cartProducts.length !== 0 && <p>{totalProducts}</p>}
+            {cartProducts.length !== 0 && <p className='styleTotalProducts'>{totalProducts}</p>}
             <ShoppingCartIcon 
                 aria-controls={open ? 'basic-menu' : undefined}
                 aria-haspopup="true"
@@ -37,10 +34,10 @@ const CartWidget = () => {
                 MenuListProps={{
                 'aria-labelledby': 'basic-button',
                 }}
-            >   {console.log("cartProducts desde widget: ", cartProducts)}
-                {x.map((product) => {
+            >
+                {cartProducts.map((product) => {
                     return(
-                           <div className='item-cart-product' key={product.id}>
+                        <div className='item-cart-product' key={product.id}>
                             <img src={`/assets/${product.image}`} alt="" />
                             <div className='cart-product__details'>
                                 <p>{product.title}</p>

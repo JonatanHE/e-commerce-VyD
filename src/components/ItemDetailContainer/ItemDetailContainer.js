@@ -1,42 +1,38 @@
-import React, {useEffect, useState} from "react";
-import ItemDetail from "../ItemDetail/ItemDetail";
-import products from "../../utils/products.mock";
-import {useParams} from "react-router-dom"
-
+import { useEffect, useState } from "react"
+import ItemDetail from "../ItemDetail/ItemDetail"
+import './ItemDetailContainer.scss'
+import products from "../../utils/products.mock"
+import { useParams } from 'react-router-dom'
+import Modal from '../Modal/Modal'
 
 const ItemDetailContainer = () => {
-    const [data, setData]= useState({})
-    //console.log("Productos desde detalles: ", products)
-    console.log("useParams: ", useParams())
-    const {id, category} = useParams()
-    console.log("ID de Parametro: ", id, "categoria: ", category)
-    
-    useEffect(() => {
+    const [productData, setProductData] = useState({})
+    const [showModal, setShowModal] = useState(false)
+    const { id } = useParams()
+
+    useEffect( () => {
         filterById()
-    },[id])
+    }, [id])
 
-    const filterById = () =>{
-            products.some((product) => {
-                if(product.id == id ){
-                    console.log("Producto filtrado ", product)
-                    setData(product)
-                }
+    const filterById = () => {
+        products.some( (product) => {
+            if(product.id == id) {
+                console.log("producto filtrado: ", product)
+                setProductData(product) 
             }
-        )
         }
-
-            /*useEffect(() => {
-        const getData = new Promise(resolve => {
-            setTimeout(() => {
-                resolve();
-            }, 2000);
-        });
-
-        getData.then(res => setData(res));
-        }, []) */
+    )
+    }
     return(
-        <ItemDetail data={data}/>
-    );
+        <div className={`container-item-detail ${showModal ? 'overlay-black' : ''}`}>
+            <ItemDetail data={productData} setShowModal={setShowModal}/>
+            {showModal && (
+                <Modal title="Imagen Producto" close={setShowModal}>
+                    <img src={`/assets/${productData.image}`} />
+                </Modal>
+            )}
+        </div>
+    )
 }
 
-export default ItemDetailContainer;
+export default ItemDetailContainer

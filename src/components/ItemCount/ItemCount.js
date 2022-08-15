@@ -1,31 +1,33 @@
-import {useState, useContext} from 'react'
-import { CartContext } from '../../context/CartContext'
+import { useState, useContext } from "react"
+import { CartContext } from "../../context/CartContext"
 
-
-const ItemCount = ({setContadorSelet, stock, productData}) => {
+const ItemCount = ({setQuantitySelected, productData}) => {
     const { addProductToCart } = useContext(CartContext)
 
-    const [contador, setContador] = useState(1)
+    const [countQuantity, setCountQuantity] = useState(1)
 
-    const addNumber = () =>{
-        setContador(contador + 1)
+    const addQuantity = () => {
+        setCountQuantity(countQuantity + 1)
     }
-    const removeNumber = () =>{
-        setContador(contador - 1)
+    
+    const removeQuantity = () => {
+        setCountQuantity(countQuantity - 1)
     }
-    const onAdd = () =>{
-        console.log("Agregar al Carrito: ", productData)
-        addProductToCart([productData])
-        setContadorSelet(contador)
+
+    const onAdd = () => {
+        console.log("Agregar al carrito: ", productData)
+        addProductToCart(productData)
+        setQuantitySelected(countQuantity)
     }
-    return (
+
+    return(
         <>
-            <div className='countProd'>
-                <button disabled={contador <= 1} onClick={removeNumber}>-</button>
-                <span>{contador}</span>
-                <button disabled={contador >= stock} onClick={addNumber}>+</button>
+            <div className="container-count">
+                <button onClick={removeQuantity}>-</button>
+                <span>{countQuantity}</span>
+                <button onClick={addQuantity}>+</button>
             </div>
-            <button onClick={onAdd}>AGREGAR A CARRITO</button>
+            <button onClick={onAdd}>AGREGAR AL CARRITO</button>
         </>
     )
 }
