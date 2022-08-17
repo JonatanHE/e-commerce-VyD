@@ -5,8 +5,9 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Products from './pages/Products';
 import Detail from './pages/Detail';
-import Checkout from './pages/Checkout';
+//import Checkout from './pages/Checkout';
 import CartProvider from './context/CartContext';
+import Cart from './components/Cart/Cart';
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
           <Route path='/contacto' element={<Contact/>}/>
           <Route path='/productos' element={<Products />}/>
           <Route path='/:category/:id' element={<Detail />}/>
-          <Route path='/cart' element={<Checkout />}/>
+          <Route path='/cart' element={<Cart />}/>
         </Routes>
       </BrowserRouter>
     </CartProvider>

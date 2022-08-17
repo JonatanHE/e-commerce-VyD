@@ -2,14 +2,17 @@
     float: left;
     width: 100%;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .container-count button {
-    background: white;
+    background: rgb(185, 169, 169);
     font-size: 30px;
-    padding: 10px;
-    width: 50px;
-    border: 1px solid #CCC;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    //border: 1px solid #CCC;
+
 }
 
 .container-count span {
