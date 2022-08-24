@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import './ItemDetailContainer.scss'
-import products from "../../utils/products.mock"
 import { useParams } from 'react-router-dom'
 import Modal from '../Modal/Modal'
+import db from "../../firebaseConfig"
+import { doc, getDoc } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
     const [productData, setProductData] = useState({})
@@ -11,18 +12,21 @@ const ItemDetailContainer = () => {
     const { id } = useParams()
 
     useEffect( () => {
-        filterById()
+        getProduct()
+        .then((res) => {
+            setProductData(res)
+        })
     }, [id])
 
-    const filterById = () => {
-        products.some( (product) => {
-            if(product.id == id) {
-                console.log("producto filtrado: ", product)
-                setProductData(product) 
-            }
-        }
-    )
+    const getProduct = async () => {
+        const docRef = doc(db, 'productos', id)
+        const docSnapshot = await getDoc(docRef)
+        let product = docSnapshot.data()
+        product.id = docSnapshot.id
+        console.log('data con id:', product)
+        return product
     }
+
     return(
         <div className={`container-item-detail ${showModal ? 'overlay-black' : ''}`}>
             <ItemDetail data={productData} setShowModal={setShowModal}/>
