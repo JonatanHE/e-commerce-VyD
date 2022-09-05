@@ -5,15 +5,34 @@
 .nav-style{
     color: #379c5d;
     font-size: 15px;
-    background-color: rgba(105, 179, 192, 0.5);
+    background-color: rgba(105, 179, 192, 0.502);
     text-align: center;
 }
 .nav-style ul li button{
-    border-radius: 10px;
-    background-color: rgba(255, 68, 0, 0.692);
-    color: rgb(0, 0, 0);
-    margin-bottom: 10px;
+    background-color: transparent;
+    font-weight: semibold;
+    color: #444;
+    font-size: 1rem;
+    padding: .4rem .2rem;
+    border: 1px solid rgba(105, 179, 192, 0.502);
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: all .5s ease;
+    box-shadow:  .05rem .05rem .1rem #ccc,
+        -.05rem -.05rem .1rem #fff;
+    margin: 0.05rem;
 }
+
+.nav-style ul li button:hover{
+    box-shadow:  .05rem .05rem 1rem #fff,
+    -.05rem -.05rem 1rem #ccc;
+}
+
+.nav-style ul li button:active{
+    box-shadow: inset .02rem .02rem .5rem #fff,
+       inset -.02rem -.02rem .5rem #ccc;
+}
+
 .nav-style ul li{
     display: inline-flex;
     margin: 1px;

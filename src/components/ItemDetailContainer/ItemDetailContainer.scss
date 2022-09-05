@@ -17,7 +17,7 @@
 }
 
 .item-detail-info {
-    width: 30%;
+    width: 50%;
     padding-top: 10px;
     border-left: 1px solid #ccc;
     padding-left: 10px;
@@ -86,18 +86,6 @@ p.detail-info__price {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
-.item-detail-info > button:before {
-    content: "";
-    width: calc(100% + 2px);
-    height: 100%;
-    position: absolute;
-    border: 1px solid black;
-    left: 1px;
-    z-index: -1;
-    bottom: -6px;
-}
-
 .item-detail-info > button:hover {
     /* background: white; */
     color: #595959;

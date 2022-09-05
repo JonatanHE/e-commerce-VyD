@@ -40,6 +40,7 @@
     img {
         width: 80%;
         margin-top: 15px;
+        border-radius: .3rem;
     }
     .countProd {
         display: flex;
@@ -78,10 +79,6 @@
 .detail-product > p svg {
     margin-right: 6px;
 }
-.item-product:nth-of-type(5n) {
-    margin-right: 0px !important;
-}
-
 .detail-product button {
     float: left;
     width: 100%;
@@ -92,7 +89,8 @@
     margin-top: 10px;
     cursor: pointer;
     padding: 5px;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    border-radius: 0.3rem;
 }
 .detail-product button:hover {
     background-color: rgb(21, 207, 21);
