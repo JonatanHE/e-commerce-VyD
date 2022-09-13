@@ -8,23 +8,29 @@ import Detail from './pages/Detail';
 //import Checkout from './pages/Checkout';
 import CartProvider from './context/CartContext';
 import Cart from './components/Cart/Cart';
+import Footer from './components/Footer/Footer';
 
 function App() {
 
   return (
     //JSX
-    <CartProvider>
-      <BrowserRouter>
-        <NavBar/>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/contacto' element={<Contact/>}/>
-          <Route path='/productos' element={<Products />}/>
-          <Route path='/:category/:id' element={<Detail />}/>
-          <Route path='/cart' element={<Cart />}/>
-        </Routes>
-      </BrowserRouter>
-    </CartProvider>
+    <div className='page-container'>
+      <div className='content-wrap'>
+      <CartProvider>
+        <BrowserRouter>
+          <NavBar/>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/contacto' element={<Contact/>}/>
+            <Route path='/productos' element={<Products />}/>
+            <Route path='/:category/:id' element={<Detail />}/>
+            <Route path='/cart' element={<Cart />}/>
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
+      </div>
+      <Footer/>
+      </div>
   );
 }
 

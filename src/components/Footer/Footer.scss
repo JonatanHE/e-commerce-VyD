@@ -1,0 +1,11 @@
+.main-footer {
+    background-color: #f54c5d;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
